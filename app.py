@@ -1,7 +1,10 @@
-print("DevOps + MLOps Lab Pipeline Started")
+import mlflow
 
-print("Step 1: Code is running successfully")
+print("Pipeline started")
 
-print("Step 2: This script will later be automated using GitHub Actions")
+with mlflow.start_run():
+    accuracy = 0.85
+    mlflow.log_metric("accuracy", accuracy)
 
-print("Pipeline finished without errors")
+print("Metric logged to MLflow")
+print("Pipeline finished successfully")
